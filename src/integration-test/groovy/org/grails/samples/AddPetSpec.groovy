@@ -30,8 +30,7 @@ class AddPetSpec extends PetclinicSpecs {
   def 'can add a valid Pet'() {
     given:
     name.value 'Fido'
-    id.value ownerId
-    
+
     when:
     addPet.click()
     

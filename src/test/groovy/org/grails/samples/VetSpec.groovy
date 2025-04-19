@@ -1,12 +1,16 @@
 package org.grails.samples
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 
-@TestFor(Vet)
-class VetSpec extends Specification implements DomainDataFactory {
+
+class VetSpec extends Specification implements DomainDataFactory, DataTest {
 	
 	Vet vet = validVet()
+
+	void setup(){
+		mockDomain(Vet)
+	}
 	
 	
 	def 'a valid Vet has no errors'() {

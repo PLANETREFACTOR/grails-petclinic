@@ -9,8 +9,8 @@ class PetController {
 			return [pet: new Pet(owner: Owner.get(params.owner?.id)), types: PetType.list()]
 		}
 
-		def pet = petclinicService.createPet(params.pet_name, params.pet?.birthDate,
-			(params.pet?.type?.id ?: 0) as Long, (params.pet_owner_id ?: 0) as Long)
+		def pet = petclinicService.createPet(params.pet_name, params.pet?.date("birthDate"),
+			(params.pet?.type?.id ?: 0) as Long, (params.owner_id ?: 0) as Long)
 
 		if (pet.hasErrors()) {
 			return [pet: pet, types: PetType.list()]
@@ -27,8 +27,8 @@ class PetController {
 
 		def pet = Pet.get(params.id)
 
-		petclinicService.updatePet(pet, params.pet_name, params.pet?.birthDate,
-			(params.pet?.type?.id ?: 0) as Long, (params.pet_owner_id ?: 0) as Long)
+		petclinicService.updatePet(pet, params.pet_name, params.pet?.date("birthDate"),
+			(params.pet?.type?.id ?: 0) as Long, (params.owner_id ?: 0) as Long)
 
 		if (pet.hasErrors()) {
 			render view: 'add', model: [pet: pet, types: PetType.list()]
@@ -43,7 +43,7 @@ class PetController {
 			return [visit: new Visit(pet: Pet.get(params.id))]
 		}
 
-		def visit = petclinicService.createVisit((params.visit?.pet?.id ?: 0) as Long, params.visit?.description, params.visit?.date)
+		def visit = petclinicService.createVisit((params.visit?.pet?.id ?: 0) as Long, params.visit?.description, params.visit?.date("date"))
 		if (visit.hasErrors()) {
 			return [visit: visit]
 		}

@@ -1,14 +1,16 @@
 package org.grails.samples
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 import spock.lang.Unroll
 
-
-@TestFor(Pet)
-class PetSpec extends Specification implements DomainDataFactory {
+class PetSpec extends Specification implements DomainDataFactory, DataTest {
 	
 	Pet pet = validPet()
+
+	void setup(){
+		mockDomain(Pet)
+	}
 	
 	Owner owner = pet.owner
 	

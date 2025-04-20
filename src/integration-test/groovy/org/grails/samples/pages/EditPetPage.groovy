@@ -10,7 +10,7 @@ class EditPetPage extends PageWithFooter {
   
   static content = {
     name { $('#pet_name') }
-    id { $('#pet_owner_id') }
+    id { $('#owner_id') }
     editPet { $('input', type: 'submit') }
     errors(required: false) { $('.errors') }
   }

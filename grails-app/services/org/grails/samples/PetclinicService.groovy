@@ -1,5 +1,8 @@
 package org.grails.samples
 
+import grails.gorm.transactions.Transactional
+
+@Transactional
 class PetclinicService {
 
 	// PetController

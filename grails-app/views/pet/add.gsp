@@ -24,14 +24,21 @@
 				</tr>
 				<tr>
 					<th>
-						Birth Date: <span class="errors"><g:fieldError bean="${pet}" field="birthDate" /></span>
+						Birth Date:
+						<g:if test="${pet.errors.getFieldError("birthDate")}">
+							<span class="errors"><g:fieldError bean="${pet}" field="birthDate" /></span>
+						</g:if>
+
 						<br/>
 						<g:datePicker name="pet.birthDate" value="${pet.birthDate}" precision="day"></g:datePicker>
 					</th>
 				</tr>
 				<tr>
 					<th>
-						Type: <span class="errors"><g:fieldError bean="${pet}" field="type" /></span>
+						Type:
+						<g:if test="${pet.errors.getFieldError("birthDate")}">
+							<span class="errors"><g:fieldError bean="${pet}" field="type" /></span>
+						</g:if>
 						<br/>
 						<g:select optionKey="id"
 						          optionValue="name" name="pet.type.id"

@@ -29,11 +29,14 @@ class ViewSourceInterceptor {
         // The 'View Source for' sidebar requires the class name of
         // the current controller and the path to the GPS view that's
         // being used for the current page.
-        model["controllerClass"] = controllerClass.clazz.name
-        model["viewPath"] = "$controllerName:${model['viewName'] ?: actionName}"
-        // Return the model for use by the view.
-        return model
-//        true
+        if(controllerClass){
+            model["controllerClass"] = controllerClass.clazz.name
+            model["viewPath"] = "$controllerName:${model['viewName'] ?: actionName}"
+            // Return the model for use by the view.
+            return model
+        }else{
+            return true
+        }
     }
 
     void afterView() {

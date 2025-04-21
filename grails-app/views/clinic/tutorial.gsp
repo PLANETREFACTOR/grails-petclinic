@@ -16,7 +16,7 @@
 
     <h2>What's New</h2>
     <table class="updated">
-       <tr><td>Grails 2.4.3</td></tr>
+       <tr><td>Running on Grails 6.2.3</td></tr>
        <tr><td>Asset Pipeline plugin replaces Resources</td></tr>
        <tr><td>Domain validation tests</td></tr>
        <tr><td>Geb functional tests</td></tr>
@@ -86,7 +86,7 @@
 	<h3>Database Technology</h3>
 	<p>
 		H2 is the default database used by Grails, but an alternative database
-		can be configured as per <a href="http://grails.org/doc/latest/guide/conf.html#dataSource" target="_blank">the instruction in the Grails user guide</a>.
+		can be configured as per <a href="https://docs.grails.org/latest/guide/conf.html#dataSource" target="_blank">the instruction in the Grails user guide</a>.
 	</p>
 
 	<h3>Development Environment</h3>
@@ -97,8 +97,8 @@
 	</p>
 
 	<ul>
-		<li>Grails 2.4.3 or above</li>
-		<li>Java SDK 6 or above</li>
+		<li>Grails 6.2.3 or above</li>
+		<li>Java SDK 11 or above</li>
 	</ul>
 
 	<p>
@@ -177,7 +177,7 @@
 	<h3>Logging</h3>
 	<p>
 		Grails supports the use of the Apache Commons Logging API. You can configure logging
-		using the <a href="http://grails.org/doc/latest/guide/conf.html#logging" target="_blank">Grails Log4j DSL</a> within the grails-app/Config.groovy file.
+		using the <a href="https://docs.grails.org/latest/guide/conf.html#logging" target="_blank">Grails Logback Xml</a> within the grails-app/conf/logback.xml file.
 	</p>
 
 	<h3>Business Layer</h3>
@@ -257,10 +257,12 @@
 	<h3>Downloads</h3>
 	<ul>
 		<li>Download and install the
-		<a href="http://grails.org/Download" target="_blank">Grails</a>
+		<a href="https://grails.org/download.html" target="_blank">Grails</a>
 		(examples, including PetClinic are provided)</li>
-		<li>Download and install a <a href="http://www.oracle.com/technetwork/java/index.html" target="_blank">Java</a>
-		Software Developer Kit, version 6 or later</li>
+		<li>Download and install a <a href="https://www.oracle.com/technetwork/java/index.html" target="_blank">Java (Oracle)</a>
+		Software Developer Kit, version 11 or later</li>
+		<li>Alternatively you can download and install <a href="https://adoptium.net/en-GB/temurin/releases/" target="_blank">Java (Eclipse Temurin)</a>
+		Software Developer Kit, version 11 or later</li>
 	</ul>
 
 	<h3>Using the PetClinic Application</h3>
@@ -276,7 +278,7 @@
 	<p>
 		Deploy the web application to the server in the usual way. If you need
 		instructions for web application deployment, see the Tomcat
-		documentation for details. The Web ARchive (WAR) file can be created by running the "grails war" command, which places it in the root of the project.
+		documentation for details. The Web Archive (WAR) file can be created by running the "grails war" command, which places it in the root of the project.
 	</p>
 
 	</div>

@@ -1,11 +1,13 @@
 package org.grails.samples
 
+import grails.gorm.transactions.Rollback
 import org.grails.samples.pages.AddOwnerPage
 import org.grails.samples.pages.AddPetPage
 import org.grails.samples.pages.EditPetPage
 import org.grails.samples.pages.ShowOwnerPage
 import spock.lang.Shared
 
+@Rollback
 class EditPetSpec extends PetclinicSpecs {
   
   @Shared

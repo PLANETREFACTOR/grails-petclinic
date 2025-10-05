@@ -1,8 +1,10 @@
 package org.grails.samples
 
+import grails.gorm.transactions.Rollback
 import org.grails.samples.pages.AddOwnerPage
 import org.grails.samples.pages.ShowOwnerPage
 
+@Rollback
 class AddOwnerSpec extends PetclinicSpecs {
 	
 	def setup() {

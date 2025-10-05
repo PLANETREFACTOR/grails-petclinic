@@ -6,5 +6,6 @@ buildCache {
             username = 'build-cache'
             password = 'admin'
         }
+        push = true
     }
 }

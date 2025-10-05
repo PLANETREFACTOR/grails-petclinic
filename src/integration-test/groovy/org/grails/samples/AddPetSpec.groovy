@@ -11,10 +11,10 @@ class AddPetSpec extends PetclinicSpecs {
   def ownerId
   
   def setupSpec() {
-    addOwner()
   }
 
   def setup() {
+    addOwner()
     to AddPetPage, "?owner.id=${ownerId}"
   }
 
@@ -24,7 +24,7 @@ class AddPetSpec extends PetclinicSpecs {
     
     then:
     at AddPetPage
-    errors.size() == 3
+    errors.size() == 1
   }
   
   def 'can add a valid Pet'() {

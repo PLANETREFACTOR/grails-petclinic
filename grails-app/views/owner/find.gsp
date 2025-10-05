@@ -14,7 +14,7 @@
             Last Name:
             <br/>
             <g:textField name="lastName"/>
-          <span class="errors"><g:message code="${message}"></g:message></span>
+         <g:if test="${message?.size() > 0}"><span class="errors"><g:message code="${message}"></g:message></span></g:if>
           </th>
         </tr>
         <tr>

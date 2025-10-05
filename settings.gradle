@@ -1,6 +1,6 @@
 buildCache {
     remote(HttpBuildCache) {
-        url = 'http://localhost:8888/build-cache/'
+        url = 'http://localhost:8888/repository/remote-build-cache/'
         allowInsecureProtocol = true
         credentials {
             username = 'build-cache'

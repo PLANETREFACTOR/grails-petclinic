@@ -1,0 +1,10 @@
+buildCache {
+    remote(HttpBuildCache) {
+        url = 'http://localhost:8888/build-cache/'
+        allowInsecureProtocol = true
+        credentials {
+            username = 'build-cache'
+            password = 'admin'
+        }
+    }
+}

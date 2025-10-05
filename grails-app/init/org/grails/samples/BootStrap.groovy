@@ -1,7 +1,4 @@
-import org.grails.samples.Owner
-import org.grails.samples.PetType
-import org.grails.samples.Speciality
-import org.grails.samples.Vet
+package org.grails.samples
 
 class BootStrap {
 
@@ -31,7 +28,7 @@ class BootStrap {
 				new PetType(name: type).save(failOnError: true)
 			}
 		}
-		
+
 		if(!Owner.count) {
 			new Owner(lastName: 'Smith', firstName: 'John', address: '123 EZ St.', city: 'NO', telephone: '123')
 				.save(failOnError: true)

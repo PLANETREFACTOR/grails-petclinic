@@ -36,8 +36,8 @@ class OwnerController {
 			return
 		}
 
-		petclinicService.updateOwner(Owner.get(params.id), params.owner?.firstName, params.owner?.lastName,
-			params.owner?.address, params.owner?.city, params.owner?.telephone)
+		petclinicService.updateOwner(Owner.get(params.id),params.owner_firstName, params.owner_lastName,
+				params.owner_address, params.owner_city, params.owner_telephone)
 
 		if (owner.hasErrors()) {
 			render view: 'add', model: [ownerBean: owner]
@@ -45,6 +45,7 @@ class OwnerController {
 		}
 
 		redirect action: 'show', id: owner.id
+		return
 	}
 
 	def find() {

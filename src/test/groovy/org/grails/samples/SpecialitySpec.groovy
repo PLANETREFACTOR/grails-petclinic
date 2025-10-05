@@ -1,13 +1,16 @@
 package org.grails.samples
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@TestFor(Speciality)
-class SpecialitySpec extends Specification implements DomainDataFactory {
+
+class SpecialitySpec extends Specification implements DomainDataFactory, DataTest {
 
 	Speciality speciality = validSpeciality()
+	void setup(){
+		mockDomain(Speciality)
+	}
 	
 	def 'a valid Speciality has no errors'() {
 		when:

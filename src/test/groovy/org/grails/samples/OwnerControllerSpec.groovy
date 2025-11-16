@@ -1,15 +1,15 @@
 package org.grails.samples
 
-import grails.test.mixin.Mock
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
+import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-@TestFor(OwnerController)
-@Mock(Owner)
-class OwnerControllerSpec extends Specification{
+
+class OwnerControllerSpec extends Specification implements ControllerUnitTest<OwnerController>, DataTest{
 
 	void setup() {
 		controller.petclinicService = new PetclinicService()
+		mockDomain(Owner)
 	}
 
 	void 'can add with the get method'() {
@@ -28,7 +28,7 @@ class OwnerControllerSpec extends Specification{
 
         then:
         model.ownerBean.hasErrors()
-        !view
+        view.contains("/owner/add")
 	}
 
 	void 'can add a valid owner with the post method'() {

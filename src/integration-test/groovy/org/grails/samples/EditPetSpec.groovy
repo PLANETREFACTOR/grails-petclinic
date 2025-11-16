@@ -12,11 +12,12 @@ class EditPetSpec extends PetclinicSpecs {
   def ownerId
 
   def setupSpec() {
-    addOwner()
-    addPetToOwner(ownerId)
+
   }
 
   def setup() {
+    addOwner()
+    addPetToOwner(ownerId)
     to EditPetPage, 1
   }
 
@@ -33,7 +34,7 @@ class EditPetSpec extends PetclinicSpecs {
   def 'can edit a valid Pet'() {
     given:
     name.value 'Fido'
-    id.value ownerId
+//    id.value ownerId
     
     when:
     editPet.click()

@@ -1,11 +1,10 @@
 package org.grails.samples
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@TestFor(Owner)
-class OwnerSpec extends Specification implements DomainDataFactory {
+class OwnerSpec extends Specification implements DomainDataFactory, DataTest  {
 
 	Owner owner = validOwner()
 	

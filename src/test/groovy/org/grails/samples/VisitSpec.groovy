@@ -1,11 +1,10 @@
 package org.grails.samples
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 import spock.lang.Unroll;
 
-@TestFor(Visit)
-class VisitSpec extends Specification implements DomainDataFactory {
+class VisitSpec extends Specification implements DomainDataFactory, DataTest{
 	
 	Visit visit = validVisit()
 		

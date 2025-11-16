@@ -10,6 +10,13 @@ class WelcomeSpec extends PetclinicSpecs {
 	def setup() {
 		to WelcomePage
 	}
+
+	def 'Home page check'() {
+		expect:
+		at WelcomePage
+		findOwner.click()
+		at FindOwnersPage
+	}
 	
 	def 'can find an Owner'() {
 		expect:
